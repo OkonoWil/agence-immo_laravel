@@ -22,7 +22,7 @@ class AuthController extends Controller
         $user = User::where('email', $validatedData['email'])->get()->first();
         if ($user) {
             if (!Hash::check($validatedData['password'], $user->password)) {
-                return redirect()->back()->withErrors(['passwords' => 'Passwords invalid']);
+                return redirect()->back()->withErrors(['password' => 'Passwords invalid']);
             }
             Auth::login($user);
             $request->session()->regenerate();

@@ -8,7 +8,7 @@
     <div class="mt-2 mb-4 ">
         <div class="flex flex-row justify-between text-xl min-w-[350px]">
             <label for="email" class="text-xl text-gray-600 block">Email :</label>
-            <input type="email" name="email" id="email"
+            <input type="email" name="email" id="email" value="{{ old('email') }}"
                 class="border w-60 ml-2 h-9 px-3 py-2 @error('email') border-red-500 @enderror bg-white shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 rounded-md sm:text-sm focus:ring-1">
         </div>
         @error('email')
