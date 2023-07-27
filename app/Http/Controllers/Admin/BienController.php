@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Bien;
 use Illuminate\Http\Request;
 
 class BienController extends Controller
@@ -20,7 +21,8 @@ class BienController extends Controller
      */
     public function create()
     {
-        //
+        $biens = Bien::paginate(8);
+        return view('admin.biens.index', ['biens' => $biens]);
     }
 
     /**

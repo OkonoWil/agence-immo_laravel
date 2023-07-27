@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\BienController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Admin\OptionController;
+use App\Http\Controllers\Web\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,10 +17,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('welcome');
 
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('biens', [HomeController::class, 'boutique'])->name('boutique');
 // Auth Routes
 Route::post('login', [AuthController::class, 'login'])->name('login');
 Route::post('logout', [AuthController::class, 'logout'])->name('logout');
